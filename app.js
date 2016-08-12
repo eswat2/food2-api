@@ -15,9 +15,9 @@ app.use(cors());
 
 let getOptions = (key, rId) => {
   let opts = {
-    method: 'GET',
+    method: 'POST',
     url: 'http://food2fork.com/api/get',
-    qs: {
+    formData: {
       key,
       rId
     },
@@ -33,28 +33,28 @@ let getOptions = (key, rId) => {
 
 let searchOptions = (key, q, sort, page) => {
   let opts = {
-    method: 'GET',
+    method: 'POST',
     url: 'http://food2fork.com/api/search',
-    qs: {
+    formData: {
       key
     },
     headers: {
       'cache-control': 'no-cache',
-      'content-type': 'application/json'
+      'content-type': 'multipart/form-data; boundary=---011000010111000001101001'
     },
     json: true
   }
 
   if (q) {
-    opts.qs.q = q;
+    opts.formData.q = q;
   }
 
   if (sort) {
-    opts.qs.sort = sort;
+    opts.formData.sort = sort;
   }
 
   if (page) {
-    opts.qs.page = page;
+    opts.formData.page = page;
   }
 
   return opts;
