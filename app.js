@@ -92,7 +92,7 @@ app.post('/search', function (req, res, next) {
 });
 
 app.use((req, res) => {
-  res.status(404).send('Invalid request!');
+  res.json({ "what": "a proxy for the search API on food2fork, with CORS support" });
 });
 
 let server = http.createServer(app);
