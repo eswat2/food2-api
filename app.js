@@ -13,6 +13,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
+let getOptions = (key, rId) => {
+  let opts = {
+    method: 'GET',
+    url: 'http://food2fork.com/api/get',
+    qs: {
+      key,
+      rId
+    },
+    headers: {
+      'cache-control': 'no-cache',
+      'content-type': 'application/json'
+    },
+    json: true
+  }
+
+  return opts;
+};
+
 let searchOptions = (key, q, sort, page) => {
   let opts = {
     method: 'GET',
@@ -42,6 +60,27 @@ let searchOptions = (key, q, sort, page) => {
   return opts;
 };
 
+//
+// NOTE:  get API
+//
+//  key: API Key
+//  rId: the recipe ID returned from the search api...
+//
+//
+app.post('/get', function (req, res, next) {
+  let key  = req.body.key;
+  let rId  = req.body.rId;
+  let opt  = getOptions(key, rId);
+
+  request(opt, function (error, response, body) {
+    if (error) {
+      res.status(500).send('Something broke!');
+    }
+    else {
+      res.json(body);
+    }
+  });
+});
 //
 // NOTE:  search API
 //
