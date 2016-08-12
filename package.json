@@ -1,0 +1,33 @@
+{
+  "name": "food2-api",
+  "version": "1.0.0",
+  "description": "a super simple api for the broken food2fork search api...",
+  "engines": {
+    "node": "6.3.0",
+    "npm": "3.10.5"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Hess eswat2@gmail.com (https://about.me/richardhess)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eswat2/food2-api"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "cors",
+    "food2fork"
+  ]
+}
