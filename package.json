@@ -2,9 +2,10 @@
   "name": "food2-api",
   "version": "1.0.1",
   "description": "a super simple api for the broken food2fork search api...",
+  "engineStrict": true,
   "engines": {
-    "node": "8.1.4",
-    "npm": "5.2.0"
+    "node": "9.4.0",
+    "npm": "5.6.0"
   },
   "main": "app.js",
   "scripts": {
@@ -14,10 +15,10 @@
   "author": "Richard Hess eswat2@gmail.com (https://about.me/richardhess)",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "1.17.2",
-    "cors": "2.8.3",
-    "express": "4.15.3",
-    "request": "2.81.0"
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "express": "4.16.2",
+    "request": "2.83.0"
   },
   "repository": {
     "type": "git",
